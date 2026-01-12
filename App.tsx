@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Features from './components/Features';
 import AppPreview from './components/AppPreview';
+import Segments from './components/Segments';
 import Pricing from './components/Pricing';
 import Footer from './components/Footer';
 
@@ -15,6 +16,7 @@ const LandingPage = () => {
         <Hero />
         <AppPreview />
         <Features />
+        <Segments />
         <Pricing />
       </main>
       <Footer />

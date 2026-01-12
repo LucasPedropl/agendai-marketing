@@ -13,7 +13,7 @@ const AppPreview: React.FC = () => {
         <div className="text-center mb-10">
           <h2 className="text-base font-semibold text-primary-600 tracking-wide uppercase">Visão Completa</h2>
           <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-            Duas experiências, uma plataforma
+            Duas experiências, em uma plataforma
           </p>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
             Veja como você gerencia seu negócio e como seu cliente agenda com facilidade.

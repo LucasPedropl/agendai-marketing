@@ -40,6 +40,13 @@ const Navbar: React.FC = () => {
                 Funcionalidades
               </a>
               <a 
+                href="#segments" 
+                onClick={(e) => handleScroll(e, 'segments')}
+                className="text-gray-500 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors"
+              >
+                Segmentos
+              </a>
+              <a 
                 href="#pricing" 
                 onClick={(e) => handleScroll(e, 'pricing')}
                 className="text-gray-500 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors"
@@ -82,6 +89,13 @@ const Navbar: React.FC = () => {
               className="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-500 hover:bg-gray-50 hover:border-primary-500 hover:text-primary-700"
             >
               Funcionalidades
+            </a>
+            <a 
+              href="#segments" 
+              onClick={(e) => handleScroll(e, 'segments')} 
+              className="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-500 hover:bg-gray-50 hover:border-primary-500 hover:text-primary-700"
+            >
+              Segmentos
             </a>
             <a 
               href="#pricing" 
