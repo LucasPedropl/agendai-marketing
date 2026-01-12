@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
                 <span className="block text-primary-600 xl:inline">sua gestão simplificada</span>
               </h1>
               <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                Pare de perder tempo no WhatsApp. Ofereça uma experiência de agendamento profissional para seus clientes e tenha controle total do financeiro e da equipe em um único lugar.
+                Pare de perder tempo e ofereça uma experiência de agendamento profissional para seus clientes e tenha controle financeiro e da equipe em um único lugar.
               </p>
               
               <div className="mt-6 flex items-center justify-center lg:justify-start gap-4 text-sm text-gray-500">
