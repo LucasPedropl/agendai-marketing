@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Features from './components/Features';
 import AppPreview from './components/AppPreview';
+import Pricing from './components/Pricing';
 import Footer from './components/Footer';
 
 const LandingPage = () => {
@@ -14,6 +15,7 @@ const LandingPage = () => {
         <Hero />
         <AppPreview />
         <Features />
+        <Pricing />
       </main>
       <Footer />
     </div>

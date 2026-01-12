@@ -16,8 +16,8 @@ const Navbar: React.FC = () => {
               <span className="text-xl font-bold text-gray-900">AgendaAi</span>
             </div>
             <div className="hidden md:ml-10 md:flex md:space-x-8">
-              <a href="#features" className="text-gray-500 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors">Funcionalidades</a>
               <a href="#preview" className="text-gray-500 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors">Demonstração</a>
+              <a href="#features" className="text-gray-500 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors">Funcionalidades</a>
               <a href="#pricing" className="text-gray-500 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors">Planos</a>
             </div>
           </div>
@@ -42,9 +42,9 @@ const Navbar: React.FC = () => {
       {isOpen && (
         <div className="md:hidden bg-white border-t border-gray-100">
           <div className="pt-2 pb-3 space-y-1">
-            <a href="#features" className="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-500 hover:bg-gray-50 hover:border-primary-500 hover:text-primary-700">Funcionalidades</a>
-            <a href="#preview" className="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-500 hover:bg-gray-50 hover:border-primary-500 hover:text-primary-700">Demonstração</a>
-            <a href="#pricing" className="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-500 hover:bg-gray-50 hover:border-primary-500 hover:text-primary-700">Planos</a>
+            <a href="#preview" onClick={() => setIsOpen(false)} className="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-500 hover:bg-gray-50 hover:border-primary-500 hover:text-primary-700">Demonstração</a>
+            <a href="#features" onClick={() => setIsOpen(false)} className="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-500 hover:bg-gray-50 hover:border-primary-500 hover:text-primary-700">Funcionalidades</a>
+            <a href="#pricing" onClick={() => setIsOpen(false)} className="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-500 hover:bg-gray-50 hover:border-primary-500 hover:text-primary-700">Planos</a>
           </div>
           <div className="pt-4 pb-4 border-t border-gray-200">
             <div className="px-4">
