@@ -47,9 +47,14 @@ const Hero: React.FC = () => {
                     Começar Agora
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </button>
-                  <button className="mt-3 sm:mt-0 w-full flex items-center justify-center px-8 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10">
+                  <a 
+                    href="https://api.whatsapp.com/send?l=pt_BR&phone=553193585185" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="mt-3 sm:mt-0 w-full flex items-center justify-center px-8 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10"
+                  >
                     Ver Demonstração
-                  </button>
+                  </a>
               </div>
 
             </div>
