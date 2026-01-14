@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { LayoutDashboard, Users } from 'lucide-react';
 import { NotebookFrame, PhoneFrame } from './agendai/DeviceFrames';
-import { BusinessDashboard } from './agendai/BusinessDashboard';
+import { BusinessDashboard, MobileBusinessDashboard } from './agendai/BusinessDashboard';
 import { ClientApp } from './agendai/ClientApp';
 
 const AppPreview: React.FC = () => {
@@ -59,9 +59,7 @@ const AppPreview: React.FC = () => {
               {/* MOBILE VIEW MOCKUP FOR BUSINESS */}
               <div className="lg:hidden">
                  <PhoneFrame>
-                    <div className="flex items-center justify-center h-full text-gray-400 text-sm p-8 text-center bg-gray-50">
-                        A visualização do painel administrativo é melhor em telas maiores (desktop).
-                    </div>
+                    <MobileBusinessDashboard />
                  </PhoneFrame>
               </div>
             </>

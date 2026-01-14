@@ -11,7 +11,9 @@ import {
   DollarSign,
   BarChart2,
   Bell,
-  PieChart,
+  Store,
+  CalendarX,
+  User
 } from 'lucide-react';
 
 export const BusinessDashboard: React.FC = () => {
@@ -191,6 +193,170 @@ export const BusinessDashboard: React.FC = () => {
           </div>
         </div>
       </div>
+    </div>
+  );
+};
+
+export const MobileBusinessDashboard: React.FC = () => {
+  return (
+    <div className="flex flex-col h-full bg-gray-50 w-full text-slate-800 font-sans">
+      <div className="flex-1 overflow-y-auto no-scrollbar pb-10">
+        
+        {/* Header */}
+        <div className="bg-white p-4 shadow-sm pb-2 sticky top-0 z-10">
+          <div className="flex items-center justify-between mb-4">
+             <div className="flex items-center gap-2">
+                <div className="bg-primary-600 p-1 rounded-md">
+                    <Calendar className="h-4 w-4 text-white" />
+                </div>
+                <span className="font-bold text-lg text-gray-900">AgendaAi</span>
+            </div>
+            <div className="relative">
+                <Bell size={20} className="text-gray-400" />
+                <div className="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full border border-white"></div>
+            </div>
+          </div>
+          
+          <h1 className="text-xl font-bold text-slate-800">Dashboard do Estabelecimento</h1>
+          <p className="text-slate-500 text-xs mt-1">Visão geral do seu negócio</p>
+        </div>
+
+        <div className="p-4 space-y-4">
+            {/* Stats Cards Vertical */}
+            <div className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm flex justify-between items-center">
+              <div>
+                <p className="text-xs text-gray-500 font-medium">Agendamentos Hoje</p>
+                <h3 className="text-2xl font-bold text-slate-800 mt-1">0</h3>
+                <p className="text-[10px] text-gray-400 mt-0.5">Confirmados</p>
+              </div>
+              <div className="h-10 w-10 bg-primary-500 rounded-lg flex items-center justify-center shadow-blue-200 shadow-md">
+                <Calendar className="text-white h-5 w-5" />
+              </div>
+            </div>
+
+            <div className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm flex justify-between items-center">
+              <div>
+                <p className="text-xs text-gray-500 font-medium">Agendamentos Semana</p>
+                <h3 className="text-2xl font-bold text-slate-800 mt-1">0</h3>
+                <p className="text-[10px] text-green-500 mt-0.5 font-medium">Esta semana</p>
+              </div>
+              <div className="h-10 w-10 bg-green-500 rounded-lg flex items-center justify-center shadow-green-200 shadow-md">
+                <Calendar className="text-white h-5 w-5" />
+              </div>
+            </div>
+
+            <div className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm flex justify-between items-center">
+              <div>
+                <p className="text-xs text-gray-500 font-medium">Receita do Mês</p>
+                <h3 className="text-2xl font-bold text-slate-800 mt-1">R$ 0.00</h3>
+                <p className="text-[10px] text-green-500 mt-0.5 font-medium">Mês atual</p>
+              </div>
+              <div className="h-10 w-10 bg-yellow-500 rounded-lg flex items-center justify-center shadow-yellow-200 shadow-md">
+                <DollarSign className="text-white h-5 w-5" />
+              </div>
+            </div>
+            
+            <div className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm flex justify-between items-center">
+              <div>
+                <p className="text-xs text-gray-500 font-medium">Taxa Cancelamento</p>
+                <h3 className="text-2xl font-bold text-slate-800 mt-1">0.0%</h3>
+                <p className="text-[10px] text-gray-400 mt-0.5">Últimos 30 dias</p>
+              </div>
+              <div className="h-10 w-10 bg-red-500 rounded-lg flex items-center justify-center shadow-red-200 shadow-md">
+                <TrendingDown className="text-white h-5 w-5" />
+              </div>
+            </div>
+
+            {/* Chart Section */}
+            <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
+               <div className="flex items-center gap-2 mb-4">
+                  <BarChart2 className="w-4 h-4 text-slate-800" />
+                  <h4 className="font-bold text-sm text-slate-800">Receita Mensal</h4>
+                </div>
+                <div className="h-40 flex items-end justify-between px-2 gap-2 pt-4 border-t border-dashed border-gray-100">
+                    {['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'].map((month, idx) => {
+                    const heights = ['40%', '65%', '45%', '80%', '55%', '90%'];
+                    const isLast = idx === 5;
+                    return (
+                        <div key={month} className="flex flex-col items-center gap-2 group w-full h-full justify-end">
+                        <div className={`w-full max-w-[20px] rounded-t-sm relative overflow-hidden transition-all duration-300 ${isLast ? 'bg-primary-100' : 'bg-slate-100'} hover:opacity-90`} style={{ height: heights[idx] }}>
+                            <div className={`absolute top-0 w-full h-1 ${isLast ? 'bg-primary-600' : 'bg-slate-300'}`}></div>
+                        </div>
+                        <span className={`text-[9px] font-medium ${isLast ? 'text-primary-600 font-bold' : 'text-gray-400'}`}>{month}</span>
+                        </div>
+                    )
+                    })}
+                </div>
+            </div>
+
+            {/* Next Appointments (Empty State) */}
+            <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-sm min-h-[160px] flex flex-col">
+                <div className="flex items-center gap-2 mb-4">
+                  <Calendar className="w-4 h-4 text-slate-800" />
+                  <h4 className="font-bold text-sm text-slate-800">Próximos Agendamentos</h4>
+                </div>
+                <div className="flex-1 flex flex-col items-center justify-center text-gray-300 gap-2">
+                    <CalendarX size={32} />
+                    <p className="text-xs font-medium">Nenhum agendamento próximo</p>
+                </div>
+            </div>
+
+            {/* Entity Counts */}
+            <div className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm flex justify-between items-center">
+              <div>
+                <p className="text-xs text-gray-500 font-medium">Serviços Ativos</p>
+                <h3 className="text-xl font-bold text-slate-800 mt-1">1</h3>
+                <p className="text-[10px] text-gray-400">Disponíveis para agendamento</p>
+              </div>
+              <div className="h-10 w-10 bg-purple-500 rounded-lg flex items-center justify-center shadow-purple-200 shadow-md">
+                <Briefcase className="text-white h-5 w-5" />
+              </div>
+            </div>
+
+            <div className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm flex justify-between items-center">
+              <div>
+                <p className="text-xs text-gray-500 font-medium">Profissionais</p>
+                <h3 className="text-xl font-bold text-slate-800 mt-1">1</h3>
+                <p className="text-[10px] text-gray-400">Cadastrados</p>
+              </div>
+              <div className="h-10 w-10 bg-primary-500 rounded-lg flex items-center justify-center shadow-blue-200 shadow-md">
+                <Users className="text-white h-5 w-5" />
+              </div>
+            </div>
+
+            <div className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm flex justify-between items-center">
+              <div>
+                <p className="text-xs text-gray-500 font-medium">Total Clientes</p>
+                <h3 className="text-xl font-bold text-slate-800 mt-1">0</h3>
+                <p className="text-[10px] text-gray-400">Cadastrados</p>
+              </div>
+              <div className="h-10 w-10 bg-pink-500 rounded-lg flex items-center justify-center shadow-pink-200 shadow-md">
+                <User className="text-white h-5 w-5" />
+              </div>
+            </div>
+
+        </div>
+      </div>
+
+      {/* Bottom Nav */}
+        <div className="bg-white border-t border-gray-100 p-3 flex justify-around items-center z-20 shrink-0">
+            <div className="flex flex-col items-center gap-1 cursor-pointer text-slate-800">
+                <LayoutDashboard size={20} />
+                <span className="text-[10px] font-bold">Dashboard</span>
+            </div>
+            <div className="flex flex-col items-center gap-1 text-gray-400 cursor-pointer hover:text-gray-600">
+                <Calendar size={20} />
+                <span className="text-[10px] font-medium">Agenda</span>
+            </div>
+            <div className="flex flex-col items-center gap-1 text-gray-400 cursor-pointer hover:text-gray-600">
+                <History size={20} />
+                <span className="text-[10px] font-medium">Histórico</span>
+            </div>
+            <div className="flex flex-col items-center gap-1 text-gray-400 cursor-pointer hover:text-gray-600">
+                <Store size={20} />
+                <span className="text-[10px] font-medium">Menu</span>
+            </div>
+        </div>
     </div>
   );
 };
